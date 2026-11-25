@@ -1,0 +1,18 @@
+[project]
+name = "receipts-mcp"
+version = "0.1.0"
+description = "MCP server: a local model reads big files for Claude and returns answers with verified file:line quotes"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["mcp>=1.27", "requests", "rapidfuzz>=3"]
+
+[project.scripts]
+receipts-mcp = "receipts.server:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["receipts"]

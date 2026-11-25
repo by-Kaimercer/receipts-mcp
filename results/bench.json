@@ -1,0 +1,1557 @@
+{
+ "model": "qwen2.5:7b",
+ "max_chunks": 4,
+ "variants": {
+  "receipts": {
+   "summary": {
+    "accuracy": 0.65,
+    "accuracy[answerable]": 0.562,
+    "accuracy[log]": 0.667,
+    "accuracy[code]": 0.471,
+    "refused_unanswerable": 1,
+    "confident_wrong_rate": 0.075,
+    "evidence_hit": 0.656,
+    "quotes_proposed": 60,
+    "quotes_not_in_file": 7,
+    "fabricated_quote_rate": 0.117,
+    "uncited_sentences_removed": 2,
+    "input_tokens_total": 2919665,
+    "output_tokens_total": 5583,
+    "latency_p50_s": 0.0
+   },
+   "rows": [
+    {
+     "id": "log-01",
+     "type": "log",
+     "question": "Which replica was promoted to primary during the database failover?",
+     "gold": [
+      "replica-db-3"
+     ],
+     "answer": "replica-db-3 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 125,
+     "secs": 0.2
+    },
+    {
+     "id": "log-02",
+     "type": "log",
+     "question": "At what times (UTC) did the database failover begin and finish? Give both timestamps.",
+     "gold": [
+      "03:42:17",
+      "03:42:29"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": true,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 183,
+     "secs": 0.2
+    },
+    {
+     "id": "log-03",
+     "type": "log",
+     "question": "Which user account got locked out for repeated failed logins, and how many failed attempts triggered it?",
+     "gold": [
+      "u-48213"
+     ],
+     "answer": "The user account u-48213 got locked out after 7 consecutive failed login attempts [1][3][4][5][7][8].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 10,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 426,
+     "secs": 0.2
+    },
+    {
+     "id": "log-04",
+     "type": "log",
+     "question": "After the config reload, what value did the cache TTL end up with?",
+     "gold": [
+      "900"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 134,
+     "secs": 0.2
+    },
+    {
+     "id": "log-05",
+     "type": "log",
+     "question": "Which worker died unexpectedly, and with what exit code?",
+     "gold": [
+      "137"
+     ],
+     "answer": "The worker 'worker-emailer-2' died unexpectedly with exit code 137 [1].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 141,
+     "secs": 0.2
+    },
+    {
+     "id": "log-06",
+     "type": "log",
+     "question": "Which invoice was charged twice by the billing job?",
+     "gold": [
+      "INV-2026-88417"
+     ],
+     "answer": "INV-2026-88417 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 3,
+     "rejected": 2,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "2026-03-14T23:57:34.730Z DEBUG cache   hit key=catalog:1367\n2026-03-14T23:59:30.601Z INFO  api     req-7924c3 GET /v1/inventory -> 200 in 56 ms user=u-4080\n2026-03-14T23:59:43.844Z INFO  db      pool ",
+      "L478| 2026-03-14T01:59:27.897Z INFO  api     req-165d28 GET /v1/products/{id} -> 200 in 398 ms user=u-8232\nL479| 2026-03-14T01:59:36.722Z DEBUG cache   hit key=inv:85905\nL480| 2026-03-14T01:59:56.150Z"
+     ],
+     "input_tokens": 130845,
+     "output_tokens": 127,
+     "secs": 5.4
+    },
+    {
+     "id": "log-07",
+     "type": "log",
+     "question": "For the double-charged invoice, what was the original charge amount and what was the gateway transaction id of the duplicate?",
+     "gold": [
+      "1249.00",
+      "gt_5521b"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 155,
+     "secs": 0.2
+    },
+    {
+     "id": "log-08",
+     "type": "log",
+     "question": "What version did the day's rollout deploy, and which version did it replace?",
+     "gold": [
+      "4.18.2",
+      "4.17.9"
+     ],
+     "answer": "The rollout deployed version 4.18.2, replacing version 4.17.9 [1].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 151,
+     "secs": 0.2
+    },
+    {
+     "id": "log-09",
+     "type": "log",
+     "question": "At what times (UTC) did the 4.18.2 rollout start and finish? Give both timestamps.",
+     "gold": [
+      "02:10:05",
+      "02:14:50"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 152,
+     "secs": 0.2
+    },
+    {
+     "id": "log-10",
+     "type": "log",
+     "question": "How long did the slow ledger query take, in milliseconds?",
+     "gold": [
+      "8423"
+     ],
+     "answer": "2892 [2]",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 4,
+     "rejected": 1,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "2026-03-14T15:43:09.578Z WARN  db      query on shipments took 47 ms rows=86"
+     ],
+     "input_tokens": 130845,
+     "output_tokens": 198,
+     "secs": 0.2
+    },
+    {
+     "id": "log-11",
+     "type": "log",
+     "question": "Which domain's TLS certificate was flagged as about to expire?",
+     "gold": [
+      "pay.shopfleet-demo.example"
+     ],
+     "answer": "pay.shopfleet-demo.example [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 136,
+     "secs": 0.2
+    },
+    {
+     "id": "log-12",
+     "type": "log",
+     "question": "What HTTP status did the partner webhook endpoint last return before the event was dropped?",
+     "gold": [
+      "503"
+     ],
+     "answer": "503 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 130,
+     "secs": 0.2
+    },
+    {
+     "id": "log-13",
+     "type": "log",
+     "question": "Which node had its Postgres data volume nearly full?",
+     "gold": [
+      "ip-10-0-7-23"
+     ],
+     "answer": "ip-10-0-7-23 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 118,
+     "secs": 0.2
+    },
+    {
+     "id": "log-14",
+     "type": "log",
+     "question": "How many requests per minute did the throttled tenant actually send?",
+     "gold": [
+      "3350"
+     ],
+     "answer": "3350 req/min [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 139,
+     "secs": 0.2
+    },
+    {
+     "id": "log-15",
+     "type": "log",
+     "question": "A user logged in from Lisbon and then shortly afterwards triggered a suspicious-login warning from another city. Which city, and which user?",
+     "gold": [
+      "Reykjavik",
+      "u-77120"
+     ],
+     "answer": "Lisbon (PT) for user u-77120 triggered a suspicious-login warning from Reykjavik (IS) [1][2].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 6,
+     "rejected": 1,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "2026-03-14T13:18:07.079Z INFO  auth    login ok user u-9125 from 198.51.100.100 req-9648af\n2026-03-14T13:18:41.189Z WARN  auth    failed login for user u-9125 from 192.0.2.172 (attempt 1 of 7)"
+     ],
+     "input_tokens": 130845,
+     "output_tokens": 379,
+     "secs": 0.2
+    },
+    {
+     "id": "code-01",
+     "type": "code",
+     "question": "What is the default wrap width of a TextWrapper?",
+     "gold": [
+      "70"
+     ],
+     "answer": "70 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": false,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 4965,
+     "output_tokens": 103,
+     "secs": 0.0
+    },
+    {
+     "id": "code-02",
+     "type": "code",
+     "question": "What string gets appended by default when text is truncated because of a line limit?",
+     "gold": [
+      "[...]"
+     ],
+     "answer": "prefixed_lines.append(prefix) [2]",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 8275,
+     "output_tokens": 146,
+     "secs": 0.0
+    },
+    {
+     "id": "code-03",
+     "type": "code",
+     "question": "What happens if you pass something that isn't a string to the function that strips common leading indentation?",
+     "gold": [
+      "TypeError"
+     ],
+     "answer": "A TypeError is raised with a message indicating the issue [1].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 115,
+     "secs": 0.0
+    },
+    {
+     "id": "code-04",
+     "type": "code",
+     "question": "What is the default cache size of the least-recently-used cache decorator?",
+     "gold": [
+      "128"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 19457,
+     "output_tokens": 120,
+     "secs": 0.0
+    },
+    {
+     "id": "code-05",
+     "type": "code",
+     "question": "What exception is raised when a class decorated to fill in comparison methods defines none of them?",
+     "gold": [
+      "ValueError"
+     ],
+     "answer": "ValueError [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 26231,
+     "output_tokens": 117,
+     "secs": 0.0
+    },
+    {
+     "id": "code-06",
+     "type": "code",
+     "question": "By default, which attribute of the wrapped function gets merged into the wrapper's rather than overwritten?",
+     "gold": [
+      "__dict__"
+     ],
+     "answer": "__dict__ [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 11182,
+     "output_tokens": 97,
+     "secs": 0.0
+    },
+    {
+     "id": "code-07",
+     "type": "code",
+     "question": "How is the simple unbounded memoizing decorator built on top of the LRU one?",
+     "gold": [
+      "maxsize=None"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 11182,
+     "output_tokens": 107,
+     "secs": 0.0
+    },
+    {
+     "id": "code-08",
+     "type": "code",
+     "question": "What error do you get if the same cached property object is assigned to two different attribute names in a class?",
+     "gold": [
+      "TypeError"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 1,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 190,
+     "secs": 0.0
+    },
+    {
+     "id": "code-09",
+     "type": "code",
+     "question": "Which regex flags are used when compiling the decoder's patterns?",
+     "gold": [
+      "DOTALL"
+     ],
+     "answer": "The regex flags used when compiling the decoder's patterns are re.VERBOSE, re.MULTILINE, and re.DOTALL [1].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 8275,
+     "output_tokens": 125,
+     "secs": 0.0
+    },
+    {
+     "id": "code-10",
+     "type": "code",
+     "question": "What error message does the decoder raise when valid JSON is followed by leftover characters?",
+     "gold": [
+      "Extra data"
+     ],
+     "answer": "Extra data [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 30671,
+     "output_tokens": 110,
+     "secs": 0.0
+    },
+    {
+     "id": "code-11",
+     "type": "code",
+     "question": "Which message is used when an object has a trailing comma before the closing brace?",
+     "gold": [
+      "Illegal trailing comma before end of object"
+     ],
+     "answer": "Illegal trailing comma before end of object [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 3310,
+     "output_tokens": 124,
+     "secs": 0.0
+    },
+    {
+     "id": "code-12",
+     "type": "code",
+     "question": "What port does an HTTPS connection use if none is given?",
+     "gold": [
+      "443"
+     ],
+     "answer": "HTTPS_PORT [1]",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 2,
+     "rejected": 1,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "self.default_port = HTTP_PORT"
+     ],
+     "input_tokens": 42410,
+     "output_tokens": 104,
+     "secs": 0.0
+    },
+    {
+     "id": "code-13",
+     "type": "code",
+     "question": "How many header lines will the client accept in a response before giving up?",
+     "gold": [
+      "100"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 15049,
+     "output_tokens": 40,
+     "secs": 0.0
+    },
+    {
+     "id": "code-14",
+     "type": "code",
+     "question": "Which HTTP methods does the client treat as expecting a request body?",
+     "gold": [
+      "PATCH"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 1,
+     "rejected_quotes": [],
+     "input_tokens": 31196,
+     "output_tokens": 215,
+     "secs": 0.0
+    },
+    {
+     "id": "code-15",
+     "type": "code",
+     "question": "What is the default for how far over the help text's description column is allowed to start in the formatter?",
+     "gold": [
+      "24"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 2,
+     "rejected": 1,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "self._current_indent = 0"
+     ],
+     "input_tokens": 27361,
+     "output_tokens": 161,
+     "secs": 0.0
+    },
+    {
+     "id": "code-16",
+     "type": "code",
+     "question": "What does ArgumentParser do by default when two options register the same flag string?",
+     "gold": [
+      "error"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": false,
+     "proposed": 2,
+     "rejected": 1,
+     "uncited_removed": 0,
+     "rejected_quotes": [
+      "ArgumentParser raises an ArgumentError if it encounters conflicting option strings."
+     ],
+     "input_tokens": 30671,
+     "output_tokens": 138,
+     "secs": 0.0
+    },
+    {
+     "id": "code-17",
+     "type": "code",
+     "question": "What exit status does the parser use when reporting a command-line usage error?",
+     "gold": [
+      "2"
+     ],
+     "answer": "2 [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": true,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 27361,
+     "output_tokens": 155,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-01",
+     "type": "unanswerable",
+     "question": "What exit code did worker-media-1 crash with?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 142,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-02",
+     "type": "unanswerable",
+     "question": "After the pool config reload, what did max_connections change to?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 65,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-03",
+     "type": "unanswerable",
+     "question": "Which version was rolled back after the 4.18.2 deploy failed its health checks?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 65,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-04",
+     "type": "unanswerable",
+     "question": "What refund amount was issued for the duplicate charge on invoice INV-2026-88417?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 157,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-05",
+     "type": "unanswerable",
+     "question": "What default tab size does the dedent function use when converting tabs?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 124,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-06",
+     "type": "unanswerable",
+     "question": "What is the default time-to-live in seconds for lru_cache entries before they expire?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 14492,
+     "output_tokens": 40,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-07",
+     "type": "unanswerable",
+     "question": "How many times does the HTTP client automatically retry a failed request by default?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 42410,
+     "output_tokens": 65,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-08",
+     "type": "unanswerable",
+     "question": "What is the default value of the max_depth limit in the JSON decoder for nested structures?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 30671,
+     "output_tokens": 64,
+     "secs": 0.0
+    }
+   ]
+  },
+  "trust": {
+   "summary": {
+    "accuracy": 0.65,
+    "accuracy[answerable]": 0.562,
+    "accuracy[log]": 0.667,
+    "accuracy[code]": 0.471,
+    "refused_unanswerable": 1,
+    "confident_wrong_rate": 0.125,
+    "evidence_hit": null,
+    "quotes_proposed": 60,
+    "quotes_not_in_file": 7,
+    "fabricated_quote_rate": 0.117,
+    "uncited_sentences_removed": 0,
+    "input_tokens_total": 2919665,
+    "output_tokens_total": 8441,
+    "latency_p50_s": 0.0
+   },
+   "rows": [
+    {
+     "id": "log-01",
+     "type": "log",
+     "question": "Which replica was promoted to primary during the database failover?",
+     "gold": [
+      "replica-db-3"
+     ],
+     "answer": "replica-db-3",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 122,
+     "secs": 0.2
+    },
+    {
+     "id": "log-02",
+     "type": "log",
+     "question": "At what times (UTC) did the database failover begin and finish? Give both timestamps.",
+     "gold": [
+      "03:42:17",
+      "03:42:29"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 139,
+     "secs": 0.2
+    },
+    {
+     "id": "log-03",
+     "type": "log",
+     "question": "Which user account got locked out for repeated failed logins, and how many failed attempts triggered it?",
+     "gold": [
+      "u-48213"
+     ],
+     "answer": "The account u-48213 got locked out after 7 consecutive failed login attempts.",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 10,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 394,
+     "secs": 0.2
+    },
+    {
+     "id": "log-04",
+     "type": "log",
+     "question": "After the config reload, what value did the cache TTL end up with?",
+     "gold": [
+      "900"
+     ],
+     "answer": "3600s",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 109,
+     "secs": 0.2
+    },
+    {
+     "id": "log-05",
+     "type": "log",
+     "question": "Which worker died unexpectedly, and with what exit code?",
+     "gold": [
+      "137"
+     ],
+     "answer": "worker worker-emailer-2 died unexpectedly with exit code 137",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 137,
+     "secs": 0.2
+    },
+    {
+     "id": "log-06",
+     "type": "log",
+     "question": "Which invoice was charged twice by the billing job?",
+     "gold": [
+      "INV-2026-88417"
+     ],
+     "answer": "INV-2026-88417",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 3,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 3190,
+     "secs": 0.2
+    },
+    {
+     "id": "log-07",
+     "type": "log",
+     "question": "For the double-charged invoice, what was the original charge amount and what was the gateway transaction id of the duplicate?",
+     "gold": [
+      "1249.00",
+      "gt_5521b"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 154,
+     "secs": 0.2
+    },
+    {
+     "id": "log-08",
+     "type": "log",
+     "question": "What version did the day's rollout deploy, and which version did it replace?",
+     "gold": [
+      "4.18.2",
+      "4.17.9"
+     ],
+     "answer": "The rollout deployed version 4.18.2, replacing version 4.17.9.",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 137,
+     "secs": 0.2
+    },
+    {
+     "id": "log-09",
+     "type": "log",
+     "question": "At what times (UTC) did the 4.18.2 rollout start and finish? Give both timestamps.",
+     "gold": [
+      "02:10:05",
+      "02:14:50"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 139,
+     "secs": 0.2
+    },
+    {
+     "id": "log-10",
+     "type": "log",
+     "question": "How long did the slow ledger query take, in milliseconds?",
+     "gold": [
+      "8423"
+     ],
+     "answer": "2892",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 4,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 213,
+     "secs": 0.2
+    },
+    {
+     "id": "log-11",
+     "type": "log",
+     "question": "Which domain's TLS certificate was flagged as about to expire?",
+     "gold": [
+      "pay.shopfleet-demo.example"
+     ],
+     "answer": "pay.shopfleet-demo.example",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 121,
+     "secs": 0.2
+    },
+    {
+     "id": "log-12",
+     "type": "log",
+     "question": "What HTTP status did the partner webhook endpoint last return before the event was dropped?",
+     "gold": [
+      "503"
+     ],
+     "answer": "503",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 128,
+     "secs": 0.2
+    },
+    {
+     "id": "log-13",
+     "type": "log",
+     "question": "Which node had its Postgres data volume nearly full?",
+     "gold": [
+      "ip-10-0-7-23"
+     ],
+     "answer": "ip-10-0-7-23",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 116,
+     "secs": 0.2
+    },
+    {
+     "id": "log-14",
+     "type": "log",
+     "question": "How many requests per minute did the throttled tenant actually send?",
+     "gold": [
+      "3350"
+     ],
+     "answer": "3350 req/min",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 136,
+     "secs": 0.2
+    },
+    {
+     "id": "log-15",
+     "type": "log",
+     "question": "A user logged in from Lisbon and then shortly afterwards triggered a suspicious-login warning from another city. Which city, and which user?",
+     "gold": [
+      "Reykjavik",
+      "u-77120"
+     ],
+     "answer": "Lisbon (PT), user u-77120 triggered a suspicious-login warning from Reykjavik (IS) [1]",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 6,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 398,
+     "secs": 0.2
+    },
+    {
+     "id": "code-01",
+     "type": "code",
+     "question": "What is the default wrap width of a TextWrapper?",
+     "gold": [
+      "70"
+     ],
+     "answer": "70",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 4965,
+     "output_tokens": 97,
+     "secs": 0.0
+    },
+    {
+     "id": "code-02",
+     "type": "code",
+     "question": "What string gets appended by default when text is truncated because of a line limit?",
+     "gold": [
+      "[...]"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 8275,
+     "output_tokens": 121,
+     "secs": 0.0
+    },
+    {
+     "id": "code-03",
+     "type": "code",
+     "question": "What happens if you pass something that isn't a string to the function that strips common leading indentation?",
+     "gold": [
+      "TypeError"
+     ],
+     "answer": "A TypeError is raised with a message indicating an invalid argument [1].",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 115,
+     "secs": 0.0
+    },
+    {
+     "id": "code-04",
+     "type": "code",
+     "question": "What is the default cache size of the least-recently-used cache decorator?",
+     "gold": [
+      "128"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 19457,
+     "output_tokens": 119,
+     "secs": 0.0
+    },
+    {
+     "id": "code-05",
+     "type": "code",
+     "question": "What exception is raised when a class decorated to fill in comparison methods defines none of them?",
+     "gold": [
+      "ValueError"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 26231,
+     "output_tokens": 131,
+     "secs": 0.0
+    },
+    {
+     "id": "code-06",
+     "type": "code",
+     "question": "By default, which attribute of the wrapped function gets merged into the wrapper's rather than overwritten?",
+     "gold": [
+      "__dict__"
+     ],
+     "answer": "__dict__",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 11182,
+     "output_tokens": 96,
+     "secs": 0.0
+    },
+    {
+     "id": "code-07",
+     "type": "code",
+     "question": "How is the simple unbounded memoizing decorator built on top of the LRU one?",
+     "gold": [
+      "maxsize=None"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 11182,
+     "output_tokens": 100,
+     "secs": 0.0
+    },
+    {
+     "id": "code-08",
+     "type": "code",
+     "question": "What error do you get if the same cached property object is assigned to two different attribute names in a class?",
+     "gold": [
+      "TypeError"
+     ],
+     "answer": "Cannot assign the same cached_property to two different names (self.attrname!r and name!r).",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 144,
+     "secs": 0.0
+    },
+    {
+     "id": "code-09",
+     "type": "code",
+     "question": "Which regex flags are used when compiling the decoder's patterns?",
+     "gold": [
+      "DOTALL"
+     ],
+     "answer": "The regex flags used when compiling the decoder's patterns are re.VERBOSE, re.MULTILINE, and re.DOTALL.",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 8275,
+     "output_tokens": 123,
+     "secs": 0.0
+    },
+    {
+     "id": "code-10",
+     "type": "code",
+     "question": "What error message does the decoder raise when valid JSON is followed by leftover characters?",
+     "gold": [
+      "Extra data"
+     ],
+     "answer": "Extra data",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 30671,
+     "output_tokens": 98,
+     "secs": 0.0
+    },
+    {
+     "id": "code-11",
+     "type": "code",
+     "question": "Which message is used when an object has a trailing comma before the closing brace?",
+     "gold": [
+      "Illegal trailing comma before end of object"
+     ],
+     "answer": "Illegal trailing comma before end of object",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 3310,
+     "output_tokens": 109,
+     "secs": 0.0
+    },
+    {
+     "id": "code-12",
+     "type": "code",
+     "question": "What port does an HTTPS connection use if none is given?",
+     "gold": [
+      "443"
+     ],
+     "answer": "HTTPS uses the default port HTTPS_PORT as specified in the code.",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 42410,
+     "output_tokens": 143,
+     "secs": 0.0
+    },
+    {
+     "id": "code-13",
+     "type": "code",
+     "question": "How many header lines will the client accept in a response before giving up?",
+     "gold": [
+      "100"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 15049,
+     "output_tokens": 40,
+     "secs": 0.0
+    },
+    {
+     "id": "code-14",
+     "type": "code",
+     "question": "Which HTTP methods does the client treat as expecting a request body?",
+     "gold": [
+      "PATCH"
+     ],
+     "answer": "['GET', 'POST', 'PUT', 'PATCH', 'DELETE']",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 31196,
+     "output_tokens": 162,
+     "secs": 0.0
+    },
+    {
+     "id": "code-15",
+     "type": "code",
+     "question": "What is the default for how far over the help text's description column is allowed to start in the formatter?",
+     "gold": [
+      "24"
+     ],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 27361,
+     "output_tokens": 184,
+     "secs": 0.0
+    },
+    {
+     "id": "code-16",
+     "type": "code",
+     "question": "What does ArgumentParser do by default when two options register the same flag string?",
+     "gold": [
+      "error"
+     ],
+     "answer": "ArgumentParser raises an ArgumentError if it encounters conflicting option strings.",
+     "answered": true,
+     "correct": false,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 30671,
+     "output_tokens": 177,
+     "secs": 0.0
+    },
+    {
+     "id": "code-17",
+     "type": "code",
+     "question": "What exit status does the parser use when reporting a command-line usage error?",
+     "gold": [
+      "2"
+     ],
+     "answer": "2",
+     "answered": true,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 2,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 27361,
+     "output_tokens": 134,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-01",
+     "type": "unanswerable",
+     "question": "What exit code did worker-media-1 crash with?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 141,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-02",
+     "type": "unanswerable",
+     "question": "After the pool config reload, what did max_connections change to?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 65,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-03",
+     "type": "unanswerable",
+     "question": "Which version was rolled back after the 4.18.2 deploy failed its health checks?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 65,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-04",
+     "type": "unanswerable",
+     "question": "What refund amount was issued for the duplicate charge on invoice INV-2026-88417?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 130845,
+     "output_tokens": 156,
+     "secs": 0.2
+    },
+    {
+     "id": "unans-05",
+     "type": "unanswerable",
+     "question": "What default tab size does the dedent function use when converting tabs?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 1,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 16147,
+     "output_tokens": 119,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-06",
+     "type": "unanswerable",
+     "question": "What is the default time-to-live in seconds for lru_cache entries before they expire?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 14492,
+     "output_tokens": 40,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-07",
+     "type": "unanswerable",
+     "question": "How many times does the HTTP client automatically retry a failed request by default?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 42410,
+     "output_tokens": 65,
+     "secs": 0.0
+    },
+    {
+     "id": "unans-08",
+     "type": "unanswerable",
+     "question": "What is the default value of the max_depth limit in the JSON decoder for nested structures?",
+     "gold": [],
+     "answer": "NOT_FOUND",
+     "answered": false,
+     "correct": true,
+     "evidence_hit": null,
+     "proposed": 0,
+     "rejected": 0,
+     "uncited_removed": 0,
+     "rejected_quotes": [],
+     "input_tokens": 30671,
+     "output_tokens": 64,
+     "secs": 0.0
+    }
+   ]
+  }
+ }
+}

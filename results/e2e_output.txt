@@ -1,0 +1,30 @@
+Tools: ask_files(paths, question, max_chunks), extract_from_files(paths, what, max_items), token_savings()
+
+=== ask_files(paths=['bench/corpus/app.log'], question='Which replica was promoted to primary during the database failover?') [ok] 59.2s ===
+Answer (qwen2.5:7b, written from the verified evidence only): replica-db-3 [1]
+
+Evidence (each quote was located in the file; text and line numbers are the file's own):
+[1] bench/corpus/app.log:905: Identifies the new primary after a database failover
+    2026-03-14T03:42:29.877Z WARN  db      failover complete: promoted replica-db-3 to primary, old primary db-primary-1 fenced
+
+Read 4 of 26 chunks (~20,944 of ~130,845 tokens). Model proposed 1 quotes: 1 verified, 0 rejected as not in the file.
+
+=== extract_from_files(paths=['bench/corpus/stdlib/json_decoder.py'], what='error messages passed to JSONDecodeError') [ok] 6.3s ===
+Evidence (each quote was located in the file; text and line numbers are the file's own):
+[1] bench/corpus/stdlib/json_decoder.py:34
+            errmsg = '%s: line %d column %d (char %d)' % (msg, lineno, colno, pos)
+
+Read all chunks (~3,310 of ~3,310 tokens). Model proposed 1 quotes: 1 verified, 0 rejected as not in the file.
+
+=== token_savings() [ok] 0.0s ===
+Last 24 hours: 2 calls; ~134,155 tokens of files handled locally, ~207 returned; ~133,948 tokens saved (100%).
+All time: 2 calls; ~134,155 tokens of files handled locally, ~207 returned; ~133,948 tokens saved (100%).
+Saved = estimated tokens of the input files minus tokens returned, i.e. assuming you would otherwise have read those files in full. Token counts are estimates (about 4 characters per token).
+
+=== ask_files(paths=['../outside.txt'], question='x') [ERROR] 0.0s ===
+Error executing tool ask_files: '../outside.txt' is outside the allowed roots: <repo>.
+
+=== ask_files(paths=['bench/corpus/stdlib/textwrap.py'], question='default width?') [ERROR] 2.1s ===
+Error executing tool ask_files: Ollama is not reachable at http://localhost:1. Start it with `ollama serve` and retry.
+
+RESULT: PASS
